@@ -1,17 +1,19 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Geist_Mono, Open_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Providers } from "@/components/providers"
+import { SITE_DESCRIPTION } from "@/components/apple-chick/content"
 import { organizationJsonLd, websiteJsonLd, indexingMetadata, buildPageOpenGraph, buildPageAlternates } from "@/lib/seo"
 import { stringifyForInlineScriptJson } from "@/lib/script-json"
 import { getCanonicalSiteUrl, siteName as resolveSiteName } from "@/lib/site-visibility"
 import "./globals.css"
 
-const geistSans = Geist({
+const openSans = Open_Sans({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-open-sans",
   display: "swap",
 })
 
@@ -30,9 +32,9 @@ export const metadata: Metadata = {
     default: siteName,
     template: `%s · ${siteName}`,
   },
-  description: "A Next.js starter template with authentication, database, and modern tooling.",
+  description: SITE_DESCRIPTION,
   ...indexingMetadata(),
-  ...buildPageOpenGraph("/", siteName, "A Next.js starter template with authentication, database, and modern tooling."),
+  ...buildPageOpenGraph("/", siteName, SITE_DESCRIPTION),
   ...buildPageAlternates("/"),
   icons: {
     icon: [
@@ -60,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${openSans.variable} ${geistMono.variable}`}>
       <body className="font-sans antialiased">
         <script
           type="application/ld+json"

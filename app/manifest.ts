@@ -1,12 +1,12 @@
 import { MetadataRoute } from "next"
 
-const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "My App"
+const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "The Apple Chick"
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: siteName,
     short_name: siteName,
-    description: "A Next.js starter template with authentication, database, and modern tooling",
+    description: "Candy apple fundraisers for schools, teams, and organizations.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

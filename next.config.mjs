@@ -18,7 +18,7 @@ const DOCUMENT_SECURITY_HEADERS = [
       "font-src 'self' data: https://fonts.gstatic.com",
       "connect-src 'self' https://*.vercel-scripts.com https://vitals.vercel-insights.com https://vercel.live wss://*.vercel.live",
       "media-src 'self' blob:",
-      "frame-src 'self' https://vercel.live",
+      "frame-src 'self' https://vercel.live https://www.youtube.com https://www.youtube-nocookie.com",
       "frame-ancestors 'none'",
       "base-uri 'self'",
       "form-action 'self'",
