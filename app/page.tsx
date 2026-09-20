@@ -1,47 +1,47 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { AppleProductSlider } from "@/components/apple-chick/apple-product-slider"
+import {
+  FundraisingCopy,
+  PhoneCallout,
+  TurnaroundNote,
+} from "@/components/apple-chick/fundraising-copy"
+import { GallerySlider } from "@/components/apple-chick/gallery-slider"
+import { HeroLogo, PageHeaderStrip } from "@/components/apple-chick/hero-logo"
+import { OrderSheets } from "@/components/apple-chick/order-sheets"
+import { PressVideos } from "@/components/apple-chick/press-videos"
+import { SiteFooter } from "@/components/apple-chick/site-footer"
+import { SocialHeader } from "@/components/apple-chick/social-header"
 
+/**
+ * Live topology (top → bottom):
+ * empty 7px header → hero PNG → Slider A → social → YouTube →
+ * two-column fundraising (left copy+disclaimer / right phone+Slider B+PDFs) → footer
+ */
 export default function Home() {
-  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "My App"
-
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
-      <Card className="w-full max-w-2xl">
-        <CardHeader>
-          <CardTitle className="text-4xl">{siteName}</CardTitle>
-          <CardDescription className="text-lg">
-            A Next.js starter template with authentication, database, and modern tooling
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-2">
-            <h3 className="text-xl font-semibold">Features</h3>
-            <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-              <li>Next.js 16 with App Router</li>
-              <li>Drizzle ORM with Neon PostgreSQL</li>
-              <li>NextAuth.js v5 authentication</li>
-              <li>Resend email integration</li>
-              <li>Tailwind CSS 4 + shadcn/ui components</li>
-              <li>TypeScript</li>
-            </ul>
+    <div className="min-h-screen bg-[#FFE016] font-sans text-[#666666] scheme-light">
+      <PageHeaderStrip />
+      <main>
+        <HeroLogo />
+        <AppleProductSlider />
+        <SocialHeader />
+        <PressVideos />
+        <section className="bg-[#FFE016] px-4 py-10">
+          <div className="mx-auto grid w-full max-w-[1024px] grid-cols-1 gap-x-[56px] gap-y-10 min-[981px]:grid-cols-2">
+            <div className="min-w-0">
+              <FundraisingCopy />
+              <div className="mt-6">
+                <TurnaroundNote />
+              </div>
+            </div>
+            <div className="min-w-0">
+              <PhoneCallout />
+              <GallerySlider />
+              <OrderSheets />
+            </div>
           </div>
-          <div className="flex flex-wrap gap-4 pt-4">
-            <Button asChild>
-              <Link href="/admin">Admin Dashboard</Link>
-            </Button>
-            <Button variant="outline" asChild>
-              <Link href="/contact">Contact</Link>
-            </Button>
-            <Button variant="outline" asChild>
-              <Link href="/privacy">Privacy</Link>
-            </Button>
-            <Button variant="outline" asChild>
-              <Link href="/terms">Terms</Link>
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
+        </section>
+      </main>
+      <SiteFooter />
     </div>
   )
 }

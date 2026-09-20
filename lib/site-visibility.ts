@@ -48,5 +48,5 @@ export function getCanonicalSiteUrl(env = process.env): string {
 }
 
 export function siteName(env = process.env): string {
-  return env.NEXT_PUBLIC_SITE_NAME?.trim() || "My App"
+  return env.NEXT_PUBLIC_SITE_NAME?.trim() || "The Apple Chick"
 }

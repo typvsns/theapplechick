@@ -17,12 +17,12 @@ export default async function OgImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: 72,
-          background: "#0f172a",
-          color: "white",
+          background: "#ffe016",
+          color: "#E02B20",
         }}
       >
-        <div style={{ fontSize: 28, opacity: 0.7 }}>Website</div>
-        <div style={{ fontSize: 72, fontWeight: 700, marginTop: 16 }}>{name}</div>
+        <div style={{ fontSize: 28, color: "#666666" }}>Candy apple fundraisers</div>
+        <div style={{ fontSize: 72, fontWeight: 800, marginTop: 16 }}>{name}</div>
       </div>
     ),
     { ...size },

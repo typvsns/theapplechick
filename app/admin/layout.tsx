@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-
+import { SessionProvider } from "next-auth/react"
 import { useSession, signOut } from "@/lib/auth-client"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -9,6 +9,14 @@ import { LogOut, Home } from "lucide-react"
 import Link from "next/link"
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <SessionProvider>
+      <AdminShell>{children}</AdminShell>
+    </SessionProvider>
+  )
+}
+
+function AdminShell({ children }: { children: React.ReactNode }) {
   const { data: session, isPending } = useSession()
   const router = useRouter()
 
