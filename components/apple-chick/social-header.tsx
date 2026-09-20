@@ -3,7 +3,7 @@ import { SOCIAL_LINKS } from "@/components/apple-chick/content"
 function SocialIcon({ network }: { network: (typeof SOCIAL_LINKS)[number]["network"] }) {
   if (network === "facebook") {
     return (
-      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-9 w-9 fill-white">
+      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-[38px] w-[38px] fill-white">
         <path d="M15.1 8.5h-2.1V7.1c0-.5.3-.6.6-.6h1.5V4.1l-2.1-.1c-2.3 0-2.9 1.8-2.9 2.9v1.6H8.1V11h1.9v8.9h2.9V11h2l.2-2.5z" />
       </svg>
     )
@@ -28,12 +28,12 @@ function SocialIcon({ network }: { network: (typeof SOCIAL_LINKS)[number]["netwo
 
 export function SocialHeader() {
   return (
-    <header className="bg-[#ffe016] px-4 py-8">
-      <div className="mx-auto w-[80%] max-w-[1080px] text-center">
-        <h1 className="text-[30px] leading-tight font-extrabold text-[#666666]">
+    <section className="bg-[#FFE016] px-4 pb-10 pt-8">
+      <div className="mx-auto w-full max-w-[1024px] text-center">
+        <h1 className="text-[30px] leading-[40px] font-extrabold text-[#333333]">
           Follow us on Facebook and Instagram
         </h1>
-        <ul className="mt-6 flex items-center justify-center gap-4">
+        <ul className="mt-[28px] flex items-center justify-center gap-2">
           {SOCIAL_LINKS.map((link) => (
             <li key={link.network}>
               <a
@@ -42,7 +42,7 @@ export function SocialHeader() {
                 rel="noopener noreferrer"
                 aria-label={link.label}
                 title={link.label}
-                className="flex h-[76px] w-[76px] items-center justify-center rounded-full transition-opacity hover:opacity-80"
+                className="flex h-[76px] w-[76px] items-center justify-center rounded-[3px] transition-[color] hover:opacity-90"
                 style={{ backgroundColor: link.color }}
               >
                 <SocialIcon network={link.network} />
@@ -52,6 +52,6 @@ export function SocialHeader() {
           ))}
         </ul>
       </div>
-    </header>
+    </section>
   )
 }

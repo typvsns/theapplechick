@@ -56,11 +56,11 @@ export const SOCIAL_LINKS = [
 
 export const PRESS_VIDEOS = [
   {
-    src: "https://www.youtube-nocookie.com/embed/xU-jTuTQpPs",
+    src: "https://www.youtube.com/embed/xU-jTuTQpPs?feature=oembed",
     title: "The Apple Chick on GoodDay Sacramento",
   },
   {
-    src: "https://www.youtube-nocookie.com/embed/A-9vSginITs",
+    src: "https://www.youtube.com/embed/A-9vSginITs?feature=oembed",
     title: "The Apple Chick On FOX40",
   },
 ] as const
@@ -89,8 +89,8 @@ export const ORDER_SHEETS = [
   },
   {
     href: "/pdfs/Fundraiser-Wht-Choc.pdf",
-    // Live site typo is "Chololate"; prefer correct spelling in the UI.
-    label: "The White Chocolate Lover Sheet",
+    // Verbatim live-site spelling (typo included).
+    label: "The White Chololate Lover Sheet",
     tone: "red",
   },
   {

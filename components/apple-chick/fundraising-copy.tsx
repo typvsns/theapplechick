@@ -2,8 +2,8 @@ import { PHONE } from "@/components/apple-chick/content"
 
 export function FundraisingCopy() {
   return (
-    <div className="text-left text-[21px] leading-[1.5] text-[#666666]">
-      <h1 className="mb-4 text-[53px] leading-tight font-extrabold text-[#E02B20]">Fundraising</h1>
+    <div className="text-left text-[21px] leading-[31.5px] font-medium text-[#666666]">
+      <h1 className="mb-4 text-[53px] leading-[53px] font-extrabold text-[#E02B20]">Fundraising</h1>
       <p className="mb-[1em]">With The Apple Chick Fundraiser, your organization sets the selling price!</p>
       <p className="mb-[1em]">
         Sell each apple for $15 and earn $8 profit per apple.
@@ -32,18 +32,23 @@ export function FundraisingCopy() {
       <p className="mb-[1em]">
         And the best part? Each participant only needs to sell about 10 apples to reach those totals!
       </p>
-      <p>Now comes the fun part… figuring out what you’ll do with all that extra cash! 🎉</p>
-      <p className="mt-6 text-center text-sm leading-normal">
-        Turnaround times are approximate and may take longer in some cases. If you need your apples by a
-        specific date, please let us know when you book your fundraiser date.
-      </p>
+      <p className="mb-[1em]">Now comes the fun part… figuring out what you’ll do with all that extra cash! 🎉</p>
     </div>
+  )
+}
+
+export function TurnaroundNote() {
+  return (
+    <p className="text-center text-[14px] leading-normal font-bold text-[#666666]">
+      Turnaround times are approximate and may take longer in some cases. If you need your apples by a
+      specific date, please let us know when you book your fundraiser date.
+    </p>
   )
 }
 
 export function PhoneCallout() {
   return (
-    <p className="mb-2 text-center text-[28px] leading-[1.3] font-bold text-[#666666]">
+    <p className="mb-3 text-center text-[28px] leading-[36.4px] font-bold text-[#666666]">
       Contact us today at
       <br />
       {PHONE}
