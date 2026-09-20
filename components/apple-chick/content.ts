@@ -65,7 +65,12 @@ export const PRESS_VIDEOS = [
   },
 ] as const
 
-/** First two sheets are purple on the live site; the rest are red. */
+/** First two sheets are purple on the live site; the rest are red.
+ * Filenames under public/pdfs/ must stay exact:
+ * Fundraiser-information.pdf, Fundraiser-Voucher-Program-1.pdf,
+ * Fundraiser-LilBit-Everything.pdf, Fundraiser-Wht-Choc.pdf,
+ * Fundraiser-Candy-Lovers.pdf, Fundraiser-Nut-Lovers.pdf
+ */
 export const ORDER_SHEETS = [
   {
     href: "/pdfs/Fundraiser-information.pdf",
@@ -84,6 +89,7 @@ export const ORDER_SHEETS = [
   },
   {
     href: "/pdfs/Fundraiser-Wht-Choc.pdf",
+    // Live site typo is "Chololate"; prefer correct spelling in the UI.
     label: "The White Chocolate Lover Sheet",
     tone: "red",
   },
@@ -98,6 +104,12 @@ export const ORDER_SHEETS = [
     tone: "red",
   },
 ] as const
+
+/** Brand images under public/images/. Hero uses the yard-sign PNG like the live site. */
+export const BRAND_IMAGES = {
+  yardSign: "/images/Apple-Chick-Yard-Sign.png",
+  largeLogo: "/images/applechicklarge.jpg",
+} as const
 
 /**
  * Embla's `duration` is a 60Hz spring factor (friction 0.68), not milliseconds.
